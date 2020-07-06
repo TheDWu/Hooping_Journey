@@ -104,7 +104,6 @@ while ability == True:
     pass
 
 
-# i dont  know how to upload to github -_-
 
 # test_player2= Player('Luis',186,71,73)
 
