@@ -54,7 +54,7 @@ class Player:
 positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
 # abilities
 abilities = {'3 Point Sniper': 'A', 'Glass Cleaner':'B', 'Handle God': 'C', 'Lockdown defender':'D', 'Athletic Finishers':'E','Iso Specialist':'F'}
-descriptions = ['As the title describes','Gets a boost']
+descriptions = ['As the title describes','Cleaning the glass A.K.A Rebounder',]
 
 # answers
 answers = {1:'Yes', 2:'No'}
