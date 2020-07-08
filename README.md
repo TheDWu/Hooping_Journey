@@ -23,5 +23,6 @@ Currently implemented:
 Currently working on:
     Player charachteristics 
 
-
+7/7
+Currently combing abilities and desciption into one dictionary instead of a dictionary and a list. 
 
