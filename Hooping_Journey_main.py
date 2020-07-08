@@ -53,8 +53,8 @@ class Player:
 # positions
 positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
 # abilities
-abilities = {'A':'3 Point Sniper\n As the title describes', 'B':'Glass Cleaner \n Cleaning the glass A.K.A Rebounder', 'C':'Handle God \n Crossover killer', 'Lockdown defender':'D', 'Athletic Finishers':'E','Iso Specialist':'F'}
-descriptions = ['As the title describes','Crossover killer ']
+abilities = {'A':'3 Point Sniper\n As the title describes', 'B':'Glass Cleaner \n Cleaning the glass A.K.A Rebounder', 'C':'Handle God \n Crossover killer', 'D':'Lockdown defender \n You got gold clamps', 'E':'Athletic Finishers \n Interior finisher','F':'Iso Specialist'}
+
 
 # answers
 answers = {1:'Yes', 2:'No'}
@@ -101,8 +101,11 @@ print('Now what kind of player are you?')
 
 ability = True
 while ability == True:
-    pass
-
+    print('Please choose 1 option')
+    for type in abilities.values():
+        print(type)
+        chosen_type =input()
+    
 
 
 # test_player2= Player('Luis',186,71,73)
