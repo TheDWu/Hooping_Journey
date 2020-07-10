@@ -50,10 +50,8 @@ class Player:
     # def defensive_rating(self,perimter_defense,interior_defense):
     #     rating = (perimter_defense+interior_defense)/2
     #     return rating
-# positions
-positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
-# abilities
-abilities = {'A':'3 Point Sniper\n As the title describes', 'B':'Glass Cleaner \n Cleaning the glass A.K.A Rebounder', 'C':'Handle God \n Crossover killer', 'D':'Lockdown defender \n You got gold clamps', 'E':'Athletic Finishers \n Interior finisher','F':'Iso Specialist'}
+
+
 
 
 # answers
@@ -72,9 +70,20 @@ height = input('What is height? (In Inches)')
 wingspan = input('What is your wingspan? (In Inches)')
 homecity = input('What city are you repping?')
 
-        
-main_player = Player(first_name,last_name,height,weight,wingspan,homecity)
+main_player = Player(first_name,last_name,height,weight,wingspan,homecity)      
 
+def three_point_specialist():
+    main_player.open_3_point + 20
+    main_player.open_midrange + 25
+    # print(main_player.open_3_point)
+    # print(main_player.open_midrange)
+
+
+# positions
+positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
+# abilities
+types = {'A':'3-POINT SNIPER\n As the title describes', 'B':'GLASS CLEANER\n Cleaning the glass A.K.A Rebounder', 'C':'HANDLE GOD \n Crossover killer', 'D':'LOCKDOWN DEFENDER \n You got gold clamps', 'E':'ATHELETIC FINISHER \n Interior finisher','F':'ISO SPECIALIST \n Kobe' }
+attributes = {'A':three_point_specialist()}
 
 
 # ask what position you want to play
@@ -99,12 +108,14 @@ while loop == True:
 print('Awesome!')
 print('Now what kind of player are you?')
 
-ability = True
-while ability == True:
+classs = True
+while classs == True:
     print('Please choose 1 option')
-    for type in abilities.values():
-        print(type)
-        chosen_type =input()
+    for letter,type in types.items():
+        print(letter+ '.'+type)
+    print(attributes.get('A'))
+    
+    chosen_type =input()
     
 
 
