@@ -31,3 +31,6 @@ Finished combining ablitiles and desciption
 currently trying to figure out if can use a function to add stats to attributes
 works if I manually add them to the value of dictionary, but does not work if I call a function for the value
 
+7/10
+Finished attributes dictionary
+
