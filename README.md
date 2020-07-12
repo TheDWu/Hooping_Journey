@@ -34,3 +34,6 @@ works if I manually add them to the value of dictionary, but does not work if I 
 7/10
 Finished attributes dictionary
 
+7/11 
+changed to input to captilzation
+

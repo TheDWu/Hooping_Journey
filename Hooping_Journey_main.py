@@ -75,11 +75,11 @@ homecity = input('What city are you repping?')
 
 main_player = Player(first_name,last_name,height,weight,wingspan,homecity)      
 
-def three_point_specialist():
-    main_player.open_3_point + 20
-    main_player.open_midrange + 25
-    # print(main_player.open_3_point)
-    # print(main_player.open_midrange)
+# def three_point_specialist():
+#     main_player.open_3_point + 20
+#     main_player.open_midrange + 25
+#     print(main_player.open_3_point)
+#     print(main_player.open_midrange)
 
 
 # positions
@@ -119,6 +119,11 @@ while classs == True:
     print(attributes.get('A'))
     
     chosen_type =input()
+    chosen_type.upper()
+    # try:
+    #     attributes.get(chosen_type)
+    # except:
+    #     print('Invalid option!')
     
 
 
