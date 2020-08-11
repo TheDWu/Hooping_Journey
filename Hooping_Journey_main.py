@@ -92,12 +92,14 @@ attributes = {'A':(main_player.open_3_point+20,main_player.open_midrange+20,main
 # ask what position you want to play
 loop = True
 while loop == True: 
-
     print('What position do you play?')
+
     for number,position in positions.items():
      print(str(number)+'.'+position)
-    position= int(input())
-
+    try:
+        position= int(input())
+    except:
+        print('Please type a valid answer!')
     if position in positions :
         print('Is a '+positions[position]+' correct?')
         for number, response in answers.items():
@@ -116,10 +118,17 @@ while classs == True:
     print('Please choose 1 option')
     for letter,type in types.items():
         print(letter+ '.'+type)
-    print(attributes.get('A'))
+    # print(attributes.get('A'))
+    try:
+        chosen_type =str(input())
     
-    chosen_type =input()
-    chosen_type.upper()
+    except:
+        print("Please choose a valid option!")
+    
+    if chosen_type == str:
+        chosen_type.upper()
+        attributes.get(chosen_type)
+        classs = False
     # try:
     #     attributes.get(chosen_type)
     # except:

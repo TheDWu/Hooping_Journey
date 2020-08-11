@@ -37,3 +37,6 @@ Finished attributes dictionary
 7/11 
 changed to input to captilzation
 
+8/11
+added try and except
+attributes except doesn't work
