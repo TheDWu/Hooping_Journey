@@ -40,3 +40,7 @@ changed to input to captilzation
 8/11
 added try and except
 attributes except doesn't work
+
+8/14
+.upper for classs doesn't work
+need to get attribute values added to main player
