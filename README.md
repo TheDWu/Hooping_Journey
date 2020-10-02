@@ -1,6 +1,8 @@
 # Hooping_Journey
  Text-based basketball game
 
+ GOAL: Post game onto a website (selfmade) 
+
 Plan
     Design Charachter
 
