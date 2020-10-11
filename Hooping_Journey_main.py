@@ -1,6 +1,15 @@
+import cmd
+import textwrap
+import sys
+import os
+import random
+
+screen_width = 100
+
+# Basic Player Info
 class Player:
 
-    def __init__(self, first_name,last_name, weight,height,wingspan,homecity):
+    def __init__(self):
 
         self.name = first_name
         self.last_name = last_name
@@ -11,30 +20,31 @@ class Player:
         self.wingspan = wingspan
         # inches
         self.homecity = homecity
-        # 
+        self.location = 'start'
+        # percentage are shots
+        self.open_3_point= 30
+        self.contested_3_point = 20
+
+        self.open_midrange = 40
+        self.contested_midrange = 25
+
+        self.open_layup = 85
+        self.contested_layup= 50
+
+        # defense basic stats
+
+        self.perimeter_defense = 50
+        self.interior_defense = 50
+        # percentage
+        self.steal = 15
+        self.block = 15
+
+        self.offensive_rebounding = 20
+        self.defensive_rebounding = 20  
       
     # make function with iq, shot percentage, outside/ inside defense, 
         # offense basic stats
-# percentage are shots
-    open_3_point= 30
-    contested_3_point = 20
 
-    open_midrange = 40
-    contested_midrange = 25
-
-    open_layup = 85
-    contested_layup= 50
-
-    # defense basic stats
-
-    perimeter_defense = 50
-    interior_defense = 50
-    # percentage
-    steal = 15
-    block = 15
-
-    offensive_rebounding = 20
-    defensive_rebounding = 20  
 
 
 
@@ -54,14 +64,68 @@ class Player:
     #     rating = (perimter_defense+interior_defense)/2
     #     return rating
 
+#Title Screen
+def title_screen_selections():
+    title = True
+    while title == True:
+        option = input("> ")
+        if option.strip.lower() == ("play"):
+            title == False
+            start_game() #placeholder
+            
+        elif option.strip.lower() == ("help"):
+            title == False
+            help_menu()
+        elif option.strip.lower() == ("quit"):
+            title == False
+            sys.exit
+        
+def title_screen():
+    # os.system('clear')
+    # Check to see if the game runs fine without the os.system('clear)
+    print('-----------------------------')
+    print('Welcome to Hoops Journey 2.0!')
+    print('-----------------------------')
+    print('       -Play-       ')
+    print('       -Help-       ')
+    print('       -Quit-       ')
+    title_screen_selections()
 
+def help_menu():
+    print('-----------------------------')
+    print('Welcome to Hoops Journey 2.0!')
+    print('-----------------------------')
+    print('Inputs are NOT case sensitive')
+    title_screen_selections()
+
+#### Game Functionality ####
+def start_game()
+
+
+
+#### Map ####
+# --------------
+# |cL| p | cR |
+# --------------
+# |wL| m | wR |
+# --------------
+# |  | t |    |
+# --------------
+# KEY BELOW
+# L = left
+# R = right
+# # c = corner
+# # w = wing
+# p = paint
+# m = mid
+# t = top of key
 
 
 # answers
 answers = {1:'Yes', 2:'No'}
 
 # intro
-print('Welcome to Hoops REVAMPED!')
+
 print('Please answer a few questions to help us design your charachter')
 
 
@@ -73,7 +137,7 @@ height = input('What is height? (In Inches)')
 wingspan = input('What is your wingspan? (In Inches)')
 homecity = input('What city are you repping?')
 
-main_player = Player(first_name,last_name,height,weight,wingspan,homecity)      
+main_player = Player()      
 
 # def three_point_specialist():
 #     main_player.open_3_point + 20

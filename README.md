@@ -6,6 +6,10 @@
 Plan
     Design Charachter
 
+    Design in game an option to go 5 positions on the court ( if you are at the top of the key, you hav eoption to drive towards paint, go to wing , go to corner, etc)
+    May change how many positions
+    Would like to add graphic of where you are at
+
     Design match
         Figure out what the right amount of turns there should be in a game
         Have a pool off different scenarios that are randomly chosen
@@ -46,3 +50,10 @@ attributes except doesn't work
 8/14
 .upper for classs doesn't work
 need to get attribute values added to main player
+
+10/10
+REealize need to create mmultiple files and then can just import data from each of them as needed
+
+Added title screen option
+Added map drawing
+Deleted init ( self.1 , self.2 , etc)
