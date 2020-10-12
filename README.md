@@ -61,3 +61,6 @@ Deleted init ( self.1 , self.2 , etc)
 10/11
 To add to values inside the class USE += number for whatever we want to add
 Added court file ( not integrated in game yet)
+
+10/12 
+changed all the values in the dicitionary to functions for CODE REUSIBILITY.

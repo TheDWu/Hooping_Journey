@@ -145,14 +145,34 @@ def three_point_specialist():
     main_player.open_midrange += 25
     main_player.contested_3_point+15
     main_player.contested_midrange+20
-   
+
+def glass_cleaner():
+    main_player.defensive_rebounding+25
+    main_player.offensive_rebounding+25
+
+def handle_god():
+    main_player.contested_layup+10
+    main_player.contested_midrange+10
+    main_player.open_layup+5
+    main_player.open_midrange+15
+
+def lockdown_defender():
+    main_player.perimeter_defense+25
+    main_player.interior_defense+25
+    main_player.steal+20
+    main_player.block+20
+
+def athletic_finisher():
+    main_player.open_layup+15
+    main_player.contested_layup+20
+
 
 
 # positions
 positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
 # abilities
-types = {'A':'3-POINT SNIPER\n As the title describes', 'B':'GLASS CLEANER\n Cleaning the glass A.K.A Rebounder', 'C':'HANDLE GOD \n Crossover killer', 'D':'LOCKDOWN DEFENDER \n You got gold clamps', 'E':'ATHELETIC FINISHER \n Interior finisher' }
-attributes = {'A':three_point_specialist(),'B':(main_player.defensive_rebounding+25,main_player.offensive_rebounding+25),'C':(main_player.contested_layup+10,main_player.contested_midrange+10,main_player.open_layup+5,main_player.open_midrange+15),'D':(main_player.perimeter_defense+25,main_player.interior_defense+25,main_player.steal+20,main_player.block+20),'E':(main_player.open_layup+15,main_player.contested_layup+20)}
+types = {'A':'3-POINT SNIPER\n As the title describes', 'B':'GLASS CLEANER\n Cleaning the glass A.K.A Rebounder', 'C':'HANDLE GOD \n Crossover killer', 'D':'LOCKDOWN DEFENDER \n You got gold clamps', 'E':'ATHLETIC FINISHER \n Interior finisher' }
+attributes = {'A':three_point_specialist(),'B':glass_cleaner(),'C':handle_god(),'D':lockdown_defender(),'E':athletic_finisher())}
 
 
 # ask what position you want to play
