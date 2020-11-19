@@ -9,9 +9,9 @@ screen_width = 100
 # Basic Player Info
 class Player:
 
-    def __init__(self):
-
-        self.name = first_name
+    def __init__(self,first_name,last_name,weight,height,wingspan,homecity,location):
+# ,name,last_name,weight,wingspan,homecity,location
+        self.first_name = first_name
         self.last_name = last_name
         self.weight= weight
         # lbs
@@ -46,6 +46,7 @@ class Player:
         # offense basic stats
 
 
+main_player = Player()  
 
 
     # def perimter_defense(self):
@@ -101,6 +102,18 @@ def help_menu():
 #### Game Functionality ####
 def start_game():
     title_screen()
+    
+
+    # intro
+    print('Please answer a few questions to help us design your charachter')
+    
+    main_player.first_name = input('What is your first name? ')
+    main_player.last_name = input('What is your last name? ')
+    print('Please round the nearest whole number')
+    main_player.weight = input('What is your weight? (In lbs)')
+    main_player.height = input('What is height? (In Inches)')
+    main_player.wingspan = input('What is your wingspan? (In Inches)')
+    main_player.homecity = input('What city are you repping?')
 
 # start_game()
 
@@ -125,20 +138,9 @@ def start_game():
 # answers
 answers = {1:'Yes', 2:'No'}
 
-# intro
 
-print('Please answer a few questions to help us design your charachter')
-
-
-first_name = input('What is your first name? ')
-last_name = input('What is your last name? ')
-print('Please round the nearest whole number')
-weight = input('What is your weight? (In lbs)')
-height = input('What is height? (In Inches)')
-wingspan = input('What is your wingspan? (In Inches)')
-homecity = input('What city are you repping?')
-
-main_player = Player()      
+   
+# List of all game classes 
 
 def three_point_specialist():
     main_player.open_3_point += 20
@@ -172,7 +174,7 @@ def athletic_finisher():
 positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
 # abilities
 types = {'A':'3-POINT SNIPER\n As the title describes', 'B':'GLASS CLEANER\n Cleaning the glass A.K.A Rebounder', 'C':'HANDLE GOD \n Crossover killer', 'D':'LOCKDOWN DEFENDER \n You got gold clamps', 'E':'ATHLETIC FINISHER \n Interior finisher' }
-attributes = {'A':three_point_specialist(),'B':glass_cleaner(),'C':handle_god(),'D':lockdown_defender(),'E':athletic_finisher())}
+attributes = {'A':three_point_specialist(),'B':glass_cleaner(),'C':handle_god(),'D':lockdown_defender(),'E':athletic_finisher()}
 
 
 # ask what position you want to play

@@ -64,3 +64,6 @@ Added court file ( not integrated in game yet)
 
 10/12 
 changed all the values in the dicitionary to functions for CODE REUSIBILITY.
+
+11/19 
+trying to fix error with main player ... possible missing arugments
