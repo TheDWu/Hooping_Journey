@@ -9,7 +9,7 @@ screen_width = 100
 # Basic Player Info
 class Player:
 
-    def __init__(self,first_name,last_name,weight,height,wingspan,homecity,location):
+    def __init__(self,first_name,last_name,weight,height,wingspan,homecity):
 # ,name,last_name,weight,wingspan,homecity,location
         self.first_name = first_name
         self.last_name = last_name
@@ -46,8 +46,8 @@ class Player:
         # offense basic stats
 
 
-main_player = Player()  
-
+main_player = Player('David','Wu','150','68','70','Streamwood')  
+# first_name,last_name,weight,height,wingspan,homecity,location
 
     # def perimter_defense(self):
     #   p_defense =int(((self.height*0.5)+((self.speed)*0.75))+((self.wingspan)*0.3)-20)
@@ -69,17 +69,18 @@ main_player = Player()
 def title_screen_selections():
     title = True
     while title == True:
-        option = input("> ")
-        if option.strip.lower() == ("play"):
-            title == False
+        option = input("> ")  # the input ('>'). putting something inside the input just lets you prompt a message before the inpout
+        
+        if option.strip().lower() == ("play"):
+            title == False 
             start_game() #placeholder
             
-        elif option.strip.lower() == ("help"):
+        elif option.strip().lower() == ("help"):
             title == False
             help_menu()
-        elif option.strip.lower() == ("quit"):
+        elif option.strip().lower() == ("quit"):
             title == False
-            sys.exit
+            sys.exit()
         
 def title_screen():
     # os.system('clear')
@@ -99,21 +100,7 @@ def help_menu():
     print('Inputs are NOT case sensitive')
     title_screen_selections()
 
-#### Game Functionality ####
-def start_game():
-    title_screen()
-    
 
-    # intro
-    print('Please answer a few questions to help us design your charachter')
-    
-    main_player.first_name = input('What is your first name? ')
-    main_player.last_name = input('What is your last name? ')
-    print('Please round the nearest whole number')
-    main_player.weight = input('What is your weight? (In lbs)')
-    main_player.height = input('What is height? (In Inches)')
-    main_player.wingspan = input('What is your wingspan? (In Inches)')
-    main_player.homecity = input('What city are you repping?')
 
 # start_game()
 
@@ -136,7 +123,23 @@ def start_game():
 
 
 # answers
-answers = {1:'Yes', 2:'No'}
+def answer():
+    while True:
+        answers = {'A':'Yes', 'B':'No'}
+        for option, answer in answers.items():
+            print(option + ':' + answer)
+        
+        response = input()
+            # response.strip().upper()
+        if response.strip().upper() == 'A':
+            break
+        if response.strip().upper() == 'B':
+            return False
+
+        if response.strip().upper() != 'A' or 'B':
+            print('Please type a valid answer!')
+            
+
 
 
    
@@ -178,52 +181,110 @@ attributes = {'A':three_point_specialist(),'B':glass_cleaner(),'C':handle_god(),
 
 
 # ask what position you want to play
-loop = True
-while loop == True: 
+def position_selection():
+    loop = True
+    while loop == True: 
 
-    print('What position do you play?')
-    for number,position in positions.items():
-     print(str(number)+'.'+position)
-    try:
-        position= int(input())
-    except:
-        print('Please type a valid answer!')
-    if position in positions :
-        print('Is a '+positions[position]+' correct?')
-        for number, response in answers.items():
-            print(str(number)+'.'+response)
-        answer = int(input())
-        if answer == 1:
+        print('What position do you play?')
+        for number,position in positions.items():
+            print(str(number)+'.'+position)
+        try:
+            position= int(input())
+        except:
+            print('Please type a valid answer!')
+        if position in positions :
+            print('Is a '+positions[position]+' correct?')
+            # for number, response in answers.items():
+            #     print(str(number)+'.'+response)
+            # answer = int(input())
+            # if answer == 1:
+            #     loop = False
+            # else:
+            #     print('Please choose a new position')
+            
+            if answer() == False :
+                print('Please choose a new position')
             loop = False
-        else:
-            print('Please choose a new position')
-        
-print('Awesome!')
-print('Now what kind of player are you?')
 
-classs = True
-while classs == True:
-    print('Please choose 1 option')
-    for letter,type in types.items():
-        print(letter+ '.'+type)
+
+def player_class():
+    # this function selects the class for the player
+    print('Awesome!')
+    print('Now what kind of player are you?')
+            
     
-    try:
-        chosen_type =str(input())
-        chosen_type.upper()
+    while True:
+        print('Please choose 1 option')
+        for letter,type in types.items():
+            print(letter+ '.'+type)
         
+        try:
+            chosen_type = ''
+            chosen_type =str(input())
+            chosen_type.upper()
+            if answer() == False :
+                print('Please re-enter your response')
+            
+        
+        except:
+            print(' Please choose a valid option')
+        
+        
+        if chosen_type in attributes:
+            
+            attributes.get(chosen_type)
+            # print(main_player.open_3_point)
+            return False
+
+
+
+#### Game Functionality ####
+def start_game():
+    # title_screen()
+    
+    # intro
+    while True:
+        print('Please answer a few questions to help us design your charachter')
+        #takes the inputs for the players basic charateristics 
+        main_player.first_name = input('What is your first name? ')
+        main_player.last_name = input('What is your last name? ')
+        print('Please round the nearest whole number')
+        main_player.weight = input('What is your weight? (In lbs)')
+        main_player.height = input('What is height? (In Inches)')
+        main_player.wingspan = input('What is your wingspan? (In Inches)')
+        main_player.homecity = input('What city are you repping?')
+
+        
+        names = { #dictionary for the name and its associated value
+        'First name':main_player.first_name ,
+        'Last name':main_player.last_name,
+        'Weight':main_player.weight,
+        'Height':main_player.height,
+        'Wingspan':main_player.wingspan,
+        'Homecity':main_player.homecity
+        }
+        
+        print('Are these correct?')
+        # names = [x for x in str(value_names) x.strip('main_player.') ]
       
-    except:
-        print(' Please choose a valid option')
-    
-    
-    if chosen_type in attributes:
-         classs = False
+        for charaterstic, charaterstic_value  in names.items() :
+            print(charaterstic + ' : ' +charaterstic_value)
+        # answer()
+        if answer() == False :
+            print('Please re-enter your response')
 
-print('Continue')  
+        else : 
+            return False
+        
+    position_selection()
+    player_class()
+            
 
+        # intial_selection = [x for x in names] 
+        # print(intial_selection)
 
-attributes.get(chosen_type)
-print(main_player.open_3_point)
+        # if select
+
     
 
 
@@ -234,4 +295,9 @@ print(main_player.open_3_point)
 # print(test_player1.interior_defense())
 # print(test_player2.interior_defense())
 # print(test_player3.interior_defense())
+# print(dir(main_player))
+# title_screen()
 
+start_game()
+position_selection()
+player_class()
