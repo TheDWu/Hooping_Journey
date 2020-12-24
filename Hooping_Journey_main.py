@@ -126,6 +126,7 @@ def help_menu():
 def answer():
     while True:
         answers = {'A':'Yes', 'B':'No'}
+        print('\nIs this correct?')
         for option, answer in answers.items():
             print(option + ':' + answer)
         
@@ -200,54 +201,42 @@ def position_selection():
             print('Please type a valid answer!')
         if position in positions :
             print('Is a '+positions[position]+' correct?')
-            # for number, response in answers.items():
-            #     print(str(number)+'.'+response)
-            # answer = int(input())
-            # if answer == 1:
-            #     loop = False
-            # else:
-            #     print('Please choose a new position')
-            
-            if answer() == False :
-                print('Please choose a new position')
+        
             loop = False
+            if answer() == False :
+                loop = True
+                print('Please choose a new position')
+                
 
 
 def player_class():
     # this function selects the class for the player
     print('Awesome!')
     print('Now what kind of player are you?')
-            
-    x = True
-    while True:
-        print('Please choose 1 option')
-        
 
-        
-        while x == True:
-            # try:
-                # chosen_type = ''
-            for letter,type in types.items(): #<-- Somehow this for is repeating even after the x = False which should exit the loop
-                print(letter+ '.'+type)
-            chosen_type = input()
-            chosen_type = chosen_type.upper().strip()
-            print('Test1')
-            if str(chosen_type) in attributes:
-                attributes.get(chosen_type)
-                print(main_player.open_3_point)  #error here
-                print('Test if')
-                x = False
-                
-                    
-                
+            
+    x = True    
+    while x == True:
+        print('Please choose 1 option')
+        # prints out all the classes and takes an input
+        for letter,type in types.items(): 
+            print(letter+ '.'+type)
+        chosen_type = input()
+        chosen_type = chosen_type.upper().strip()
+        # if a valid input then  runs the corresponding function via the attribute dictionary 
+        if str(chosen_type) in attributes:
+            attributes.get(chosen_type)
+            print(attributes.get(chosen_type))  # Suspect the get is not actually getting the value from the dictionary
+            x = False #exits the loop
+
             if answer() == False :
                     # Subtract the chosen type attribute 
                 print('Please re-enter your response')
-                x = True
-        return False 
+                x = True #Reruns the loop
+        else:
+            print('Please enter a valid option') 
                     
-        # except:
-            # print(' Please choose a valid option')
+       
         
         
         
