@@ -75,3 +75,6 @@ created dictionary that houses the players basic attributes
 CURRENT ISSUE: The player class function is not ending 
   - The chosen class is not running the function 
   
+12/24 
+Issue resolved.Error was that the code was not captilizing the input. Needed to set chosen_type = chosen_type.upper() instead of writing by itself. 
+CURRENT ISSUE: Trying to get the chosen type's corresponind class to actually run its function

@@ -177,7 +177,13 @@ def athletic_finisher():
 positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
 # abilities
 types = {'A':'3-POINT SNIPER\n As the title describes', 'B':'GLASS CLEANER\n Cleaning the glass A.K.A Rebounder', 'C':'HANDLE GOD \n Crossover killer', 'D':'LOCKDOWN DEFENDER \n You got gold clamps', 'E':'ATHLETIC FINISHER \n Interior finisher' }
-attributes = {'A':three_point_specialist(),'B':glass_cleaner(),'C':handle_god(),'D':lockdown_defender(),'E':athletic_finisher()}
+attributes = {
+'A':three_point_specialist(),
+'B':glass_cleaner(),
+'C':handle_god(),
+'D':lockdown_defender(),
+'E':athletic_finisher()
+}
 
 
 # ask what position you want to play
@@ -217,17 +223,19 @@ def player_class():
         print('Please choose 1 option')
         
 
-        print(main_player.open_3_point)
+        
         while x == True:
             # try:
                 # chosen_type = ''
             for letter,type in types.items(): #<-- Somehow this for is repeating even after the x = False which should exit the loop
                 print(letter+ '.'+type)
-            chosen_type =input()
-            chosen_type.upper()
+            chosen_type = input()
+            chosen_type = chosen_type.upper().strip()
+            print('Test1')
             if str(chosen_type) in attributes:
                 attributes.get(chosen_type)
                 print(main_player.open_3_point)  #error here
+                print('Test if')
                 x = False
                 
                     
@@ -235,11 +243,11 @@ def player_class():
             if answer() == False :
                     # Subtract the chosen type attribute 
                 print('Please re-enter your response')
+                x = True
         return False 
                     
         # except:
             # print(' Please choose a valid option')
-        print('cont')
         
         
         
