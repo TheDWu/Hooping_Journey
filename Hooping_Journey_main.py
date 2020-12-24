@@ -22,7 +22,7 @@ class Player:
         self.homecity = homecity
         self.location = 'start'
         # percentage are shots
-        self.open_3_point= 30
+        self.open_3_point = 30
         self.contested_3_point = 20
 
         self.open_midrange = 40
@@ -146,8 +146,8 @@ def answer():
 # List of all game classes 
 
 def three_point_specialist():
-    main_player.open_3_point += 20
-    main_player.open_midrange += 25
+    main_player.open_3_point + 20
+    main_player.open_midrange + 25
     main_player.contested_3_point+15
     main_player.contested_midrange+20
 
@@ -212,29 +212,37 @@ def player_class():
     print('Awesome!')
     print('Now what kind of player are you?')
             
-    
+    x = True
     while True:
         print('Please choose 1 option')
-        for letter,type in types.items():
-            print(letter+ '.'+type)
         
-        try:
-            chosen_type = ''
-            chosen_type =str(input())
+
+        print(main_player.open_3_point)
+        while x == True:
+            # try:
+                # chosen_type = ''
+            for letter,type in types.items(): #<-- Somehow this for is repeating even after the x = False which should exit the loop
+                print(letter+ '.'+type)
+            chosen_type =input()
             chosen_type.upper()
+            if str(chosen_type) in attributes:
+                attributes.get(chosen_type)
+                print(main_player.open_3_point)  #error here
+                x = False
+                
+                    
+                
             if answer() == False :
+                    # Subtract the chosen type attribute 
                 print('Please re-enter your response')
-            
+        return False 
+                    
+        # except:
+            # print(' Please choose a valid option')
+        print('cont')
         
-        except:
-            print(' Please choose a valid option')
         
         
-        if chosen_type in attributes:
-            
-            attributes.get(chosen_type)
-            # print(main_player.open_3_point)
-            return False
 
 
 
@@ -276,8 +284,8 @@ def start_game():
         else : 
             return False
         
-    position_selection()
-    player_class()
+    # position_selection()
+    # player_class()
             
 
         # intial_selection = [x for x in names] 

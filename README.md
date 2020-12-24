@@ -72,4 +72,6 @@ trying to fix error with main player ... possible missing arugments
 temporarily fixed main player (Unsure if I am actually addressing the inputs to be the new values of the main_player or I am creating new variables)
 Adding answer function 
 created dictionary that houses the players basic attributes
-CURRENT ISSUE: The player class function is not ending
+CURRENT ISSUE: The player class function is not ending 
+  - The chosen class is not running the function 
+  
