@@ -79,6 +79,6 @@ CURRENT ISSUE: The player class function is not ending
 Issue resolved.Error was that the code was not captilizing the input. Needed to set chosen_type = chosen_type.upper() instead of writing by itself. 
 
 Fixed answer selction for current code. If the input is not one of the choices then it redos the loop
-CURRENT ISSUE: Trying to get the chosen type's corresponind class to actually run its function
+CURRENT WORKING: Trying to get the chosen type's corresponind class to actually run its function
  - Suspect that the get method is not getting from dictionary
    - Need to test if the get method not working or when we call the key of dictionary the value(function) is not working

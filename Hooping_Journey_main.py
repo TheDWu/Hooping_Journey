@@ -147,30 +147,30 @@ def answer():
 # List of all game classes 
 
 def three_point_specialist():
-    main_player.open_3_point + 20
-    main_player.open_midrange + 25
-    main_player.contested_3_point+15
-    main_player.contested_midrange+20
+    main_player.open_3_point += 20
+    main_player.open_midrange += 25
+    main_player.contested_3_point+= 15
+    main_player.contested_midrange+= 20
 
 def glass_cleaner():
-    main_player.defensive_rebounding+25
-    main_player.offensive_rebounding+25
+    main_player.defensive_rebounding += 25
+    main_player.offensive_rebounding += 25
 
 def handle_god():
-    main_player.contested_layup+10
-    main_player.contested_midrange+10
-    main_player.open_layup+5
-    main_player.open_midrange+15
+    main_player.contested_layup += 10
+    main_player.contested_midrange += 10
+    main_player.open_layup += 5
+    main_player.open_midrange += 15
 
 def lockdown_defender():
-    main_player.perimeter_defense+25
-    main_player.interior_defense+25
-    main_player.steal+20
-    main_player.block+20
+    main_player.perimeter_defense += 25
+    main_player.interior_defense += 25
+    main_player.steal += 20
+    main_player.block += 20
 
 def athletic_finisher():
-    main_player.open_layup+15
-    main_player.contested_layup+20
+    main_player.open_layup += 15
+    main_player.contested_layup += 20
 
 
 
@@ -226,7 +226,7 @@ def player_class():
         # if a valid input then  runs the corresponding function via the attribute dictionary 
         if str(chosen_type) in attributes:
             attributes.get(chosen_type)
-            print(attributes.get(chosen_type))  # Suspect the get is not actually getting the value from the dictionary
+            print(main_player.open_3_point)  # Suspect the get is not actually getting the value from the dictionary
             x = False #exits the loop
 
             if answer() == False :
