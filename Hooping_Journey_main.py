@@ -149,8 +149,8 @@ def answer():
 def three_point_specialist():
     main_player.open_3_point += 20
     main_player.open_midrange += 25
-    main_player.contested_3_point+= 15
-    main_player.contested_midrange+= 20
+    main_player.contested_3_point += 15
+    main_player.contested_midrange += 20
 
 def glass_cleaner():
     main_player.defensive_rebounding += 25
@@ -274,6 +274,9 @@ def start_game():
       
         for charaterstic, charaterstic_value  in names.items() :
             print(charaterstic + ' : ' +charaterstic_value)
+        # # three_point_specialist()
+        # print('This is open 3'+str(main_player.open_3_point))
+        # print('THis is contested 3'+str(main_player.contested_3_point))
         # answer()
         if answer() == False :
             print('Please re-enter your response')
