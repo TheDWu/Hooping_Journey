@@ -45,8 +45,64 @@ class Player:
     # make function with iq, shot percentage, outside/ inside defense, 
         # offense basic stats
 
+### CLASS OPTIONS ###      
+    def three_point_specialist(self):
+        main_player.open_3_point += 20
+        main_player.open_midrange += 25
+        main_player.contested_3_point += 15
+        main_player.contested_midrange += 20
+    
+    def glass_cleaner(self):
+        main_player.defensive_rebounding += 25
+        main_player.offensive_rebounding += 25
+    
+    def handle_god(self):
+        main_player.contested_layup += 10
+        main_player.contested_midrange += 10
+        main_player.open_layup += 5
+        main_player.open_midrange += 15
 
-main_player = Player('David','Wu','150','68','70','Streamwood')  
+    def lockdown_defender(self):
+        main_player.perimeter_defense += 25
+        main_player.interior_defense += 25
+        main_player.steal += 20
+        main_player.block += 20
+    
+    def athletic_finisher(self):
+        main_player.open_layup += 15
+        main_player.contested_layup += 20
+
+### Counter Class Options ###
+    def subtract_three_point_specialist(self):
+        main_player.open_3_point -= 20
+        main_player.open_midrange -= 25
+        main_player.contested_3_point -= 15
+        main_player.contested_midrange -= 20
+    
+    def subtract_glass_cleaner(self):
+        main_player.defensive_rebounding -= 25
+        main_player.offensive_rebounding -= 25
+    
+    def subtract_handle_god(self):
+        main_player.contested_layup -= 10
+        main_player.contested_midrange -= 10
+        main_player.open_layup -= 5
+        main_player.open_midrange -= 15
+
+    def subtract_lockdown_defender(self):
+        main_player.perimeter_defense -= 25
+        main_player.interior_defense -= 25
+        main_player.steal -= 20
+        main_player.block -= 20
+    
+    def subtract_athletic_finisher(self):
+        main_player.open_layup -= 15
+        main_player.contested_layup -= 20
+
+
+#NOTE: Can take a look into calling attributes as its own class and just refrence it as a class
+
+main_player = Player('default ','okayer','150','68','70','Streamwood')  
 # first_name,last_name,weight,height,wingspan,homecity,location
 
     # def perimter_defense(self):
@@ -143,47 +199,26 @@ def answer():
 
 
 
-   
-# List of all game classes 
-
-def three_point_specialist():
-    main_player.open_3_point += 20
-    main_player.open_midrange += 25
-    main_player.contested_3_point += 15
-    main_player.contested_midrange += 20
-
-def glass_cleaner():
-    main_player.defensive_rebounding += 25
-    main_player.offensive_rebounding += 25
-
-def handle_god():
-    main_player.contested_layup += 10
-    main_player.contested_midrange += 10
-    main_player.open_layup += 5
-    main_player.open_midrange += 15
-
-def lockdown_defender():
-    main_player.perimeter_defense += 25
-    main_player.interior_defense += 25
-    main_player.steal += 20
-    main_player.block += 20
-
-def athletic_finisher():
-    main_player.open_layup += 15
-    main_player.contested_layup += 20
-
-
-
 # positions
 positions = {1:'Point Guard', 2:'Shooting Guard',3:'Small Forward', 4:'Power Forward', 5:'Center'}
 # abilities
 types = {'A':'3-POINT SNIPER\n As the title describes', 'B':'GLASS CLEANER\n Cleaning the glass A.K.A Rebounder', 'C':'HANDLE GOD \n Crossover killer', 'D':'LOCKDOWN DEFENDER \n You got gold clamps', 'E':'ATHLETIC FINISHER \n Interior finisher' }
+
 attributes = {
-'A':three_point_specialist(),
-'B':glass_cleaner(),
-'C':handle_god(),
-'D':lockdown_defender(),
-'E':athletic_finisher()
+    'A':main_player.three_point_specialist,
+    'B':main_player.glass_cleaner,
+    'C':main_player.handle_god,
+    'D':main_player.lockdown_defender,
+    'E':main_player.athletic_finisher
+
+}
+negative_attributes = {
+    'A':main_player.subtract_three_point_specialist,
+    'B':main_player.subtract_glass_cleaner,
+    'C':main_player.subtract_handle_god,
+    'D':main_player.subtract_lockdown_defender,
+    'E':main_player.subtract_athletic_finisher
+
 }
 
 
@@ -191,6 +226,7 @@ attributes = {
 def position_selection():
     loop = True
     while loop == True: 
+        
 
         print('What position do you play?')
         for number,position in positions.items():
@@ -217,22 +253,29 @@ def player_class():
             
     x = True    
     while x == True:
+        
         print('Please choose 1 option')
         # prints out all the classes and takes an input
         for letter,type in types.items(): 
             print(letter+ '.'+type)
+        
         chosen_type = input()
         chosen_type = chosen_type.upper().strip()
         # if a valid input then  runs the corresponding function via the attribute dictionary 
         if str(chosen_type) in attributes:
-            attributes.get(chosen_type)
-            print(main_player.open_3_point)  # Suspect the get is not actually getting the value from the dictionary
+            # attributes.get(chosen_type)()
             x = False #exits the loop
 
             if answer() == False :
                     # Subtract the chosen type attribute 
+                # negative_attributes.get(chosen_type)() <-- I think dont need this because changed it so it doesnt call till after
                 print('Please re-enter your response')
+                print(main_player.open_3_point)
                 x = True #Reruns the loop
+            else:
+                attributes.get(chosen_type)()
+                print(main_player.open_3_point)
+
         else:
             print('Please enter a valid option') 
                     

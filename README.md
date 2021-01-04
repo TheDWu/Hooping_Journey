@@ -82,3 +82,19 @@ Fixed answer selction for current code. If the input is not one of the choices t
 CURRENT WORKING: Trying to get the chosen type's corresponind class to actually run its function
  - Suspect that the get method is not getting from dictionary
    - Need to test if the get method not working or when we call the key of dictionary the value(function) is not working
+   - think the dictionary is running the function before us calling it
+
+
+12/30 
+- working on feet and inch converter 
+
+1/1
+Fixed dictionary automatically running function. 
+Create counter function in case the user selects NO on their class selection
+
+In the works : 
+    -
+    - working on feet and inch converter
+
+1/4
+Deleted counter function and made an "else" statement that calls the dictionary. So no longer need counter ( Need to test)
