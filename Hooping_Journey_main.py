@@ -177,6 +177,28 @@ def help_menu():
 # m = mid
 # t = top of key
 
+#These should house the attribute changes if someone is at the selected spot
+def corner_left():
+    pass
+
+def corner_right():
+    pass
+
+
+def wing_left():
+    pass
+
+def wing_right():
+    pass
+
+def paint():
+    pass
+
+def mid():
+    pass
+
+def top_of_key():
+    pass
 
 # answers
 def answer():
@@ -327,27 +349,7 @@ def start_game():
         else : 
             return False
         
-    # position_selection()
-    # player_class()
-            
 
-        # intial_selection = [x for x in names] 
-        # print(intial_selection)
-
-        # if select
-
-    
-
-
-# test_player2= Player('Luis',186,71,73)
-
-# test_player3= Player('Josh',109,67,69)
-
-# print(test_player1.interior_defense())
-# print(test_player2.interior_defense())
-# print(test_player3.interior_defense())
-# print(dir(main_player))
-# title_screen()
 
 start_game()
 position_selection()
